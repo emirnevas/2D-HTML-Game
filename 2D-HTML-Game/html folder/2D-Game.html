@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../css folder/statsModal.css" rel="stylesheet" />
+  <link href="../css folder/weaponModal.css" rel="stylesheet" />
+  <link href="../css folder/rgbModal.css" rel="stylesheet" />
+  <link href="../css folder/2D-Game.css" rel="stylesheet" />
+  <title>2D RPG</title>
+
+
+
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item item-1" id="character-grid">
+      <img src="../images/spartan.png" id="character" />
+    </div>
+    <div class="grid-item item-2">
+      <img src="../images/background.png" id="background" />
+    </div>
+    <div class="grid-item item-3">
+      <img src="" id="enemy" />
+    </div>
+    <div class="grid-item item-4">Hp Bars</div>
+    <div class="grid-item item-5">
+      <h3 style="font-size: 1.7vw;">Character's Stats</h3>
+      <p id="hero-strength">Strength:</p>
+      <p id="hero-attackStrength">Attack Strength:</p>
+      <p id="hero-defenceStrength">Defence Strength:</p>
+      <p id="hero-speed">Speed:</p>
+      <p id="hero-attackSpeed">Attack Speed: </p>
+      <p id="hero-evasionSpeed">Evasion Speed: </p>
+    </div>
+    <div class="grid-item item-6" id="battleLog">
+    </div>
+    <div class="grid-item item-7">
+      <h3 style="font-size: 1.7vw;">Enemy's Stats</h3>
+      <p id="enemy-strength">Strength: </p>
+      <p id="enemy-attackStrength">Attack Strength:</p>
+      <p id="enemy-defenceStrength">Defence Strength:</p>
+      <p id="enemy-speed">Speed:</p>
+      <p id="enemy-attackSpeed">Attack Speed:</p>
+      <p id="enemy-evasionSpeed">Evasion Speed:</p>
+    </div>
+    <div class="grid-item item-8">
+      <img src="../images/love (1).png" id="ring" />
+      <img src="../images/spears.png" id="weapon" />
+      <img src="../images/amulet.png" id="amulet" />
+    </div>
+    <div class="grid-item item-9">
+      <button id="fight-button">FIGHT</button>
+    </div>
+    <div class="grid-item item-10">
+      <img src="../images/question-mark.png" id="tips" />
+    </div>
+  </div>
+
+  <div id="rgbModal" class="modal">
+    <div class="modal-content" id="rgb-modal-content">
+      <span class="close">&times;</span>
+      <p id="rgb-explaniation">Find the perfect rgb to counter your enemy!</p>
+      <input type="color" id="colorPicker">
+      <p id="selectedColor">Selected Color: <span id="selectedColorValue">rgb(0,0,0)</span></p>
+    </div>
+  </div>
+
+  <div id="weaponModal" class="modal">
+    <div class="modal-content" id="weapon-modal-content">
+      <span class="close">&times;</span>
+      <p id="weapon-explaniation" class="explaniation">Find the perfect weapon to counter your enemy!</p>
+      <div class="image-container">
+        <img src="../images/katana.png" id="katana" class="weapon-image" />
+        <img src="../images/spearformodal.png" id="spearForModal" class="weapon-image" />
+        <img src="../images/axe.png" id="axe" class="weapon-image" />
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="statModal" class="modal">
+    <div class="modal-content" id="stat-modal-content">
+      <span class="close">&times;</span>
+      <h2>Allocate Your Stats</h2>
+      <p id="free-stats">Free Stats: <span id="freeStats">10</span></p>
+
+      <div class="stat">
+        <span>Lifepoint: <span id="lifepoint">0</span></span>
+        <button class="decrease" onclick="decreaseStat('lifepoint')">-</button>
+        <button class="increase" onclick="increaseStat('lifepoint')">+</button>
+      </div>
+      <div class="stat">
+        <span>Strength: <span id="strength">0</span></span>
+        <button class="decrease" onclick="decreaseStat('strength')">-</button>
+        <button class="increase" onclick="increaseStat('strength')">+</button>
+      </div>
+      <div class="stat">
+        <span>Speed: <span id="speed">0</span></span>
+        <button class="decrease" onclick="decreaseStat('speed')">-</button>
+        <button class="increase" onclick="increaseStat('speed')">+</button>
+      </div>
+      <hr>
+      <div class="stat">
+        <span>Attack Strength: <span id="attackStrength">0</span></span>
+        <button class="decrease" onclick="decreaseSubStat('attackStrength')">-</button>
+        <button class="increase" onclick="increaseSubStat('attackStrength')">+</button>
+      </div>
+      <div class="stat">
+        <span>Defence Strength: <span id="defenceStrength">0</span>&nbsp;</span>
+        <button class="decrease" onclick="decreaseSubStat('defenceStrength')">-</button>
+        <button class="increase" onclick="increaseSubStat('defenceStrength')">+</button>
+      </div>
+      <div class="stat">
+        <span>Attack Speed: <span id="attackSpeed">0</span></span>
+        <button class="decrease" onclick="decreaseSubStat('attackSpeed')">-</button>
+        <button class="increase" onclick="increaseSubStat('attackSpeed')">+</button>
+      </div>
+      <div class="stat">
+        <span>Evasion Speed: <span id="evasionSpeed">0</span></span>
+        <button class="decrease" onclick="decreaseSubStat('evasionSpeed')">-</button>
+        <button class="increase" onclick="increaseSubStat('evasionSpeed')">+</button>
+      </div>
+      <hr>
+      <p id="free-strength-stats">Free Strength Stats: <span id="freeStrengthStats">0</span></p>
+      <p id="free-speed-stats">Free Speed Stats: <span id="freeSpeedStats">0</span></p>
+    </div>
+  </div>
+
+  <script src="../scripts/characterStatShow.js"></script>
+  <script src="../scripts/attacks.js""></script>
+  <script src=" ../scripts/StatDistrubeters.js"></script>
+  <script src="../scripts/EnemyCaller.js"></script>
+  <script src="../scripts/Weapons.js"></script>
+  <script src="../scripts/Enemy.js"></script>
+  <script src="../scripts/Hero.js"></script>
+  <script src="../scripts/Battle.js"></script>
+  <script src="../scripts/Main.js"></script>
+  <script src="../scripts/heroStats.js"></script>
+</body>
+
+</html>

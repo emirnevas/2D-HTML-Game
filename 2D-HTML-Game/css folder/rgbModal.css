@@ -1,0 +1,101 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#rgb-modal-content {
+    background-color: #e3deee;
+    margin: 0% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 60%;
+    text-align: center;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 10%;
+}
+
+.close {
+    color: #3c1d1d;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute; 
+    top: 10px; 
+    right: 20px; 
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#colorPicker {
+    width: 20%;
+    height: 30%;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(249, 6, 6);
+    background-color: rgb(46, 45, 68);
+    margin-top: 3%;
+}
+
+#rgb-explaniation {
+    font-size: 3vw;
+    margin-top: -2%;
+    font-weight: 700;
+    color: rgb(60, 81, 33);
+}
+
+#selectedColorValue {
+    font-size: 2.5vw;
+    font-weight: 600;
+}
+
+#selectedColor {
+    font-size: 2vw;
+}
